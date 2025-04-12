@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Harris-Benedict</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      select,
+      button {
+        padding: 8px;
+        margin: 5px;
+        width: 200px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Calculadora de TMB (Harris-Benedict)</h2>
+    <form id="formulario">
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" required>
+        <option value="">Selecione</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+      </select>
+
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" step="0.1" required />
+
+      <label for="altura">Altura (cm):</label>
+      <input type="number" id="altura" required />
+
+      <label for="idade">Idade (anos):</label>
+      <input type="number" id="idade" required />
+
+      <button type="button" onclick="calcularTMB()">Calcular TMB</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+      function calcularTMB() {
+        const sexo = document.getElementById("sexo").value;
+        const peso = parseFloat(document.getElementById("peso").value);
+        const altura = parseFloat(document.getElementById("altura").value);
+        const idade = parseInt(document.getElementById("idade").value);
+        let tmb;
+
+        if (sexo === "" || isNaN(peso) || isNaN(altura) || isNaN(idade)) {
+          document.getElementById("resultado").innerText =
+            "Por favor, preencha todos os campos corretamente.";
+          return;
+        }
+
+        if (sexo === "masculino") {
+          tmb = 88.362 + 13.397 * peso + 4.799 * altura - 5.677 * idade;
+        } else if (sexo === "feminino") {
+          tmb = 447.593 + 9.247 * peso + 3.098 * altura - 4.33 * idade;
+        }
+
+        document.getElementById(
+          "resultado"
+        ).innerText = `Sua Taxa Metabólica Basal é: ${tmb.toFixed(
+          2
+        )} calorias/dia`;
+      }
+    </script>
+  </body>
+</html>

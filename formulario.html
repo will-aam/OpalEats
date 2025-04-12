@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formulario.css" />
+    <title>Triagem - OpalEats</title>
+    <!-- Essa pagina é um fomulario para coletar informações do usuário
+    afim de guia-lo para uma formulá para calcular suas calorias. -->
+  </head>
+
+  <body>
+    <header>
+      <h1>Formulário de Triagem Nutricional</h1>
+    </header>
+
+    <main>
+      <form id="form-triagem" action="#" method="post">
+        <!-- 1º Informações Pessoais -->
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
+
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="1" required />
+
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo" aria-required="true" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="outro">Outro</option>
+          </select>
+
+          <label for="peso">Peso atual (kg):</label>
+          <input
+            type="number"
+            step="0.1"
+            id="peso"
+            name="peso"
+            min="1"
+            required
+          />
+
+          <label for="altura">Altura (cm):</label>
+          <input type="number" id="altura" name="altura" min="50" required />
+
+          <label for="atividade">Nível de Atividade Física:</label>
+          <!-- ESTUDAR ESSA PARTE -->
+          <select id="atividade" name="atividade" aria-required="true" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="sedentario">Sedentário</option>
+            <option value="leve">Leve (1-2 dias/semana)</option>
+            <option value="moderado">Moderado (3-4 dias/semana)</option>
+            <option value="intenso">Intenso (5-7 dias/semana)</option>
+            <option value="muito-intenso">
+              Muito Intenso (7 dias/semana, 2x/dia)
+            </option>
+          </select>
+        </fieldset>
+        <br />
+
+        <!-- Percentual de Gordura -->
+        <fieldset>
+          <legend>Percentual de Gordura Corporal (Opcional)</legend>
+          <p id="gordura-info">Você sabe sua % de gordura corporal?</p>
+          <label for="gordura">Percentual de Gordura (%):</label>
+          <input
+            type="number"
+            step="0.1"
+            id="gordura"
+            name="gordura"
+            placeholder="Ex: 18.0"
+            aria-describedby="gordura-info"
+          />
+        </fieldset>
+        <br />
+
+        <!-- 2º Informação: Biotipo -->
+        <section aria-describedby="biotipo-info">
+          <h2>Biotipo corporal não é fator determinante</h2>
+          <p id="biotipo-info">
+            Embora o biotipo influencie características físicas e o metabolismo,
+            ele
+            <strong>não define sozinho</strong> sua capacidade de emagrecer ou
+            ganhar massa muscular. A genética pode contribuir com até 30% a 40%
+            em condições como obesidade ou diabetes, mas o estilo de vida —
+            alimentação adequada, atividade física e acompanhamento profissional
+            — tem papel ainda mais decisivo. Com um plano nutricional
+            individualizado e disciplina, é possível alcançar resultados
+            expressivos <strong>independentemente do tipo corporal.</strong>
+          </p>
+
+          <p>
+            Ainda assim, entender o seu biotipo pode ser útil para ajustar
+            melhor os cálculos e estratégias. Embora as fórmulas não utilizem
+            diretamente o biotipo como variável, suas características — como
+            proporção de gordura e massa magra — ajudam a escolher a fórmula
+            mais adequada para estimar suas necessidades calóricas.
+          </p>
+
+          <p>
+            Por isso, pedimos que você selecione seu biotipo: essa informação
+            auxilia na personalização do cálculo e torna o planejamento mais
+            eficiente.
+          </p>
+
+          <h3>Não sabe seu biotipo? Descubra aqui:</h3>
+          <p class="botao-container">
+            <button
+              type="button"
+              class="link-info botao-info"
+              data-modal="modal-teste-pulso"
+            >
+              Teste do Pulso
+            </button>
+          </p>
+          <!-- Modal para Teste do Pulso -->
+          <div class="modal-overlay" id="modal-teste-pulso">
+            <div class="modal-content">
+              <button type="button" class="modal-close">x</button>
+              <h4>Teste do Pulso</h4>
+              <p>
+                O médico William Sheldon desenvolveu um método simples para
+                ajudar a identificar seu biotipo corporal, indo além da simples
+                observação física.
+              </p>
+              <p>
+                Siga os passos abaixo para medir seu pulso e estimar seu
+                biotipo:
+              </p>
+              <ol>
+                <li>
+                  Com a mão direita, envolva o pulso esquerdo com o polegar e o
+                  dedo médio.
+                </li>
+                <li>Observe o que acontece:</li>
+                <ul>
+                  <li>
+                    Se os dedos se sobrepõem facilmente:
+                    <strong>Ectomorfo</strong> (ossos finos).
+                  </li>
+                  <li>
+                    Se os dedos se tocam ou quase se tocam:
+                    <strong>Mesomorfo</strong> (ossos médios).
+                  </li>
+                  <li>
+                    Se os dedos não se encontram:
+                    <strong>Endomorfo</strong> (ossos largos).
+                  </li>
+                </ul>
+              </ol>
+              <p>
+                Use esse teste como uma referência simples para confirmar seu
+                biotipo.
+              </p>
+            </div>
+          </div>
+
+          <h3>Informe seu biotipo</h3>
+          <p>Escolha abaixo a imagem que melhor representa seu biotipo:</p>
+
+          <div class="biotipo-container">
+            <label class="biotipo-option">
+              <img
+                src="ectomorfo.jpg"
+                alt="Ectomorfo"
+                width="100"
+                height="150"
+              />
+              <input type="radio" name="biotipo" value="ectomorfo" required />
+              <span>Ectomorfo</span>
+            </label>
+            <label class="biotipo-option">
+              <img
+                src="endomorfo.jpg"
+                alt="Endomorfo"
+                width="100"
+                height="150"
+              />
+              <input type="radio" name="biotipo" value="endomorfo" />
+              <span>Endomorfo</span>
+            </label>
+            <label class="biotipo-option">
+              <img
+                src="mesomorfo.jpg"
+                alt="Mesomorfo"
+                width="100"
+                height="150"
+              />
+              <input type="radio" name="biotipo" value="mesomorfo" />
+              <span>Mesomorfo</span>
+            </label>
+          </div>
+        </section>
+        <hr />
+        <br />
+
+        <!-- 3º Objetivos -->
+        <fieldset>
+          <legend>Objetivos de Composição Corporal</legend>
+          <label for="obj-manter">
+            <input
+              type="radio"
+              id="obj-manter"
+              name="objetivos[]"
+              radio
+              value="manter"
+            />
+            Manter o Peso
+          </label>
+          <label for="obj-emagrecer">
+            <input
+              type="radio"
+              id="obj-emagrecer"
+              name="objetivos[]"
+              value="emagrecer"
+            />
+            Perder Peso (Emagrecer)
+          </label>
+          <label for="obj-hipertrofia">
+            <input
+              type="radio"
+              id="obj-hipertrofia"
+              name="objetivos[]"
+              value="hipertrofia"
+            />
+            Ganhar Massa Muscular (Hipertrofia)
+          </label>
+          <label for="obj-aumentar">
+            <input
+              type="radio"
+              id="obj-aumentar"
+              name="objetivos[]"
+              value="aumentar"
+            />
+            Aumentar o Peso (de forma saudável)
+          </label>
+        </fieldset>
+        <br />
+
+        <fieldset>
+          <legend>Objetivos de Performance e Condicionamento Físico</legend>
+          <p>Você pode selecionar mais de um, se desejar:</p>
+          <label for="obj-forca">
+            <input
+              type="checkbox"
+              id="obj-forca"
+              name="objetivos[]"
+              value="forca"
+            />
+            Aumentar a Força
+          </label>
+          <label for="obj-endurance">
+            <input
+              type="checkbox"
+              id="obj-endurance"
+              name="objetivos[]"
+              value="endurance"
+            />
+            Aumentar a Resistência (Endurance)
+          </label>
+          <label for="obj-velocidade">
+            <input
+              type="checkbox"
+              id="obj-velocidade"
+              name="objetivos[]"
+              value="velocidade"
+            />
+            Aumentar a Velocidade
+          </label>
+          <label for="obj-flexibilidade">
+            <input
+              type="checkbox"
+              id="obj-flexibilidade"
+              name="objetivos[]"
+              value="flexibilidade"
+            />
+            Melhorar a Flexibilidade
+          </label>
+        </fieldset>
+        <br />
+
+        <!-- Informações Adicionais -->
+        <fieldset>
+          <legend>Informações Adicionais (Opcional)</legend>
+          <label for="saude">Histórico de saúde:</label>
+          <textarea id="saude" name="saude" rows="4"></textarea>
+
+          <label for="restricoes">Restrições alimentares / Alergias:</label>
+          <textarea id="restricoes" name="restricoes" rows="4"></textarea>
+
+          <label for="preferencias">Preferências alimentares:</label>
+          <textarea id="preferencias" name="preferencias" rows="4"></textarea>
+        </fieldset>
+        <br />
+
+        <!-- Botões -->
+        <div class="botoes-formulas">
+          <button
+            type="button"
+            class="botao"
+            onclick="calcularTMB('harris-benedict')"
+          >
+            Harris-Benedict
+          </button>
+          <button
+            type="button"
+            class="botao"
+            onclick="calcularTMB('mifflin-st-jeor')"
+          >
+            Mifflin-St Jeor
+          </button>
+          <button
+            type="button"
+            class="botao"
+            onclick="calcularTMB('katch-mcardle')"
+          >
+            Katch-McArdle
+          </button>
+          <button type="button" class="botao" onclick="calcularTMB('oms')">
+            OMS
+          </button>
+          <button type="button" class="botao" onclick="calcularTMB('owen')">
+            Owen
+          </button>
+          <button type="button" class="botao" onclick="calcularTMB('henry')">
+            Henry
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="modals.js"></script>
+    <script src="calculos.js"></script>
+  </body>
+</html>

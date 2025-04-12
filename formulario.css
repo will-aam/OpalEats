@@ -1,0 +1,361 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f5;
+  color: #333333;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #023f44;
+  font-size: 2em;
+}
+
+h2 {
+  color: #023f44;
+  font-size: 1.5em;
+  margin: 20px 0 10px;
+}
+
+h3 {
+  color: #023f44;
+  font-size: 1.2em;
+  margin: 15px 0 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+fieldset {
+  border: 1px solid #d9e8e9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+legend {
+  color: #023f44;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #023f44;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9e8e9;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f4f6f5;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #066a73;
+  outline: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #023f44;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.biotipo-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.biotipo-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.biotipo-option img {
+  width: 100px;
+  height: 150px;
+  border: 2px solid #d9e8e9;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.biotipo-option input:checked + img {
+  border-color: #066a73;
+}
+
+.biotipo-option span {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #023f44;
+}
+
+.link-info {
+  color: #066a73;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-info:hover {
+  text-decoration: underline;
+  color: #023f44;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #d9e8e9;
+  margin: 5px 0;
+}
+
+/* Estilização dos botões (ajustada) */
+.botao {
+  background-color: #023f44;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao:hover {
+  background-color: #ff6f61; /* Coral vibrante para destacar */
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Novo contêiner para os botões de fórmulas */
+.botoes-formulas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.botoes-formulas .botao {
+  background-color: #066a73; /* Verde-azulado mais claro */
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.botoes-formulas .botao:hover {
+  background-color: #ff6f61; /* Mesmo coral para consistência */
+  transform: translateY(-2px);
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #d9e8e9;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+footer a {
+  color: #066a73;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #023f44;
+}
+
+/* Ajustes para validação */
+input:invalid:focus {
+  border-color: #b22222;
+}
+
+/* Contêiner dos botões */
+.botao-container {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+/* Estilização dos botões */
+.link-info.botao-info {
+  background-color: #023f44;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover dos botões */
+.link-info.botao-info:hover {
+  background-color: #ff6f61; /* Coral para hover */
+}
+
+/* Overlay do modal (fundo escurecido) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de fechar */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #023f44;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: #ff6f61; /* Coral para hover */
+}
+
+/* Estilização do título e texto no modal */
+.modal-content h4 {
+  color: #023f44;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.modal-content p muod {
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.modal-content ul,
+.modal-content ol {
+  margin-left: 20px;
+  color: #333333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .biotipo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .biotipo-option img {
+    width: 80px;
+    height: 120px;
+  }
+
+  .botao {
+    width: 100%;
+  }
+
+  .botoes-formulas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botoes-formulas .botao {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  fieldset {
+    padding: 15px;
+  }
+
+  .botao-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-info.botao-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content h4 {
+    font-size: 1.2em;
+  }
+}
