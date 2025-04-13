@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- lembrar de colocar o cabeçalho do index em planejamento.html -->
     <!-- Calcular Calorias -->
     <!-- preciso estudar cada uma das formulas para saber como ela em caixa em relação a lista 2 -->
     <!-- se ecaixa da seguin forma:
@@ -33,5 +34,50 @@
       <li>Cálculo da Necessidade Diária de Gorduras</li>
       <li>Cálculo da Necessidade Diária de Carboidratos</li>
     </ul>
+  </body>
+</html>
+
+<!-- obs -->
+    <!-- essa lista serve para personalizar a dieta ou treino. -->
+    <ul>
+      <li>Cálculo do Déficit Calórico</li>
+      <li>Cálculo da Necessidade Diária de Proteínas</li>
+      <li>Cálculo da Necessidade Diária de Gorduras</li>
+      <li>Cálculo da Necessidade Diária de Carboidratos</li>
+    </ul>
+
+    <div class="botoes-formulas">
+      <button
+        type="button"
+        class="botao"
+        onclick="calcularTMB('harris-benedict')"
+      >
+        Harris-Benedict
+      </button>
+      <button
+        type="button"
+        class="botao"
+        onclick="calcularTMB('mifflin-st-jeor')"
+      >
+        Mifflin-St Jeor
+      </button>
+      <button
+        type="button"
+        class="botao"
+        onclick="calcularTMB('katch-mcardle')"
+      >
+        Katch-McArdle
+      </button>
+      <button type="button" class="botao" onclick="calcularTMB('oms')">
+        OMS
+      </button>
+      <button type="button" class="botao" onclick="calcularTMB('owen')">
+        Owen
+      </button>
+      <button type="button" class="botao" onclick="calcularTMB('henry')">
+        Henry
+      </button>
+    </div>
+    <script src="calculos.js"></script>
   </body>
 </html>

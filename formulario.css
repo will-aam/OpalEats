@@ -47,7 +47,7 @@ fieldset {
   border: 1px solid #d9e8e9;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Aumentado para substituir <br /> */
   background-color: #ffffff;
 }
 
@@ -96,6 +96,52 @@ textarea {
   min-height: 100px;
 }
 
+/* Estilo do accordion */
+details {
+  border: 1px solid #d9e8e9;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+summary {
+  color: #023f44;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 10px;
+  cursor: pointer;
+  list-style: none; /* Remove marcador padrão em alguns navegadores */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::after {
+  content: "▼";
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+summary:hover {
+  background-color: #f4f6f5;
+}
+
+.biotipo-details {
+  padding: 15px;
+  color: #333333;
+}
+
+.biotipo-details p {
+  margin-bottom: 10px;
+}
+
+/* Contêiner das imagens */
 .biotipo-container {
   display: flex;
   justify-content: center;
@@ -103,39 +149,40 @@ textarea {
   margin: 20px 0;
 }
 
+/* Cada opção de biotipo */
 .biotipo-option {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+/* Esconder os inputs de rádio */
+.biotipo-option input[type="radio"] {
+  display: none;
+}
+
+/* Estilo da imagem */
 .biotipo-option img {
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 200px;
   border: 2px solid #d9e8e9;
   border-radius: 10px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.biotipo-option input:checked + img {
+/* Destaque para a imagem selecionada */
+.biotipo-option.selected img {
   border-color: #066a73;
+  box-shadow: 0 0 10px rgba(6, 106, 115, 0.5);
+  transform: scale(1.05);
 }
 
+/* Texto abaixo da imagem */
 .biotipo-option span {
   margin-top: 10px;
   font-weight: bold;
-  color: #023f44;
-}
-
-.link-info {
-  color: #066a73;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.link-info:hover {
-  text-decoration: underline;
   color: #023f44;
 }
 
@@ -145,69 +192,7 @@ hr {
   margin: 5px 0;
 }
 
-/* Estilização dos botões (ajustada) */
-.botao {
-  background-color: #023f44;
-  color: #ffffff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.botao:hover {
-  background-color: #ff6f61; /* Coral vibrante para destacar */
-  transform: translateY(-2px); /* Pequeno efeito de elevação */
-}
-
-/* Novo contêiner para os botões de fórmulas */
-.botoes-formulas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.botoes-formulas .botao {
-  background-color: #066a73; /* Verde-azulado mais claro */
-  flex: 1;
-  min-width: 150px;
-  max-width: 200px;
-}
-
-.botoes-formulas .botao:hover {
-  background-color: #ff6f61; /* Mesmo coral para consistência */
-  transform: translateY(-2px);
-}
-
-footer {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #d9e8e9;
-  text-align: center;
-  font-size: 0.9em;
-  color: #666666;
-}
-
-footer a {
-  color: #066a73;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #023f44;
-}
-
-/* Ajustes para validação */
-input:invalid:focus {
-  border-color: #b22222;
-}
-
-/* Contêiner dos botões */
+/* Contêiner dos botões de modal */
 .botao-container {
   display: flex;
   gap: 15px;
@@ -215,7 +200,7 @@ input:invalid:focus {
   margin: 10px 0;
 }
 
-/* Estilização dos botões */
+/* Estilização dos botões de modal */
 .link-info.botao-info {
   background-color: #023f44;
   color: #ffffff;
@@ -229,24 +214,27 @@ input:invalid:focus {
   transition: background-color 0.3s ease;
 }
 
-/* Hover dos botões */
+/* Hover dos botões de modal */
 .link-info.botao-info:hover {
-  background-color: #ff6f61; /* Coral para hover */
+  background-color: #066a73;
 }
 
 /* Overlay do modal (fundo escurecido) */
 .modal-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  display: none;
+}
+
+.modal-overlay[aria-hidden="false"] {
+  display: flex;
 }
 
 /* Conteúdo do modal */
@@ -277,7 +265,7 @@ input:invalid:focus {
 }
 
 .modal-close:hover {
-  background-color: #ff6f61; /* Coral para hover */
+  background-color: #066a73;
 }
 
 /* Estilização do título e texto no modal */
@@ -287,7 +275,7 @@ input:invalid:focus {
   margin-bottom: 15px;
 }
 
-.modal-content p muod {
+.modal-content p {
   color: #333333;
   margin-bottom: 15px;
 }
@@ -296,6 +284,46 @@ input:invalid:focus {
 .modal-content ol {
   margin-left: 20px;
   color: #333333;
+}
+
+/* Imagem no modal do Teste do Pulso */
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+  border: 1px solid #d9e8e9;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #d9e8e9;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+footer a {
+  color: #066a73;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #023f44;
+}
+
+/* Ajustes para validação */
+input:invalid:focus {
+  border-color: #b22222;
+}
+
+/* Mensagens de erro */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.2rem;
 }
 
 /* Responsividade */
@@ -315,25 +343,12 @@ input:invalid:focus {
   .biotipo-container {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
 
   .biotipo-option img {
     width: 80px;
     height: 120px;
-  }
-
-  .botao {
-    width: 100%;
-  }
-
-  .botoes-formulas {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .botoes-formulas .botao {
-    width: 100%;
-    max-width: 300px;
   }
 
   fieldset {
@@ -357,5 +372,34 @@ input:invalid:focus {
 
   .modal-content h4 {
     font-size: 1.2em;
+  }
+}
+.submit-btn {
+  background-color: #023f44;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 20px auto;
+}
+
+.submit-btn:hover {
+  background-color: #066a73;
+  transform: scale(1.05);
+}
+
+.submit-btn:focus {
+  outline: 2px solid #066a73;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .submit-btn {
+    padding: 10px 20px;
+    font-size: 1em;
   }
 }

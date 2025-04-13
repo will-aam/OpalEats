@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="formulario.css" />
     <title>Triagem - OpalEats</title>
-    <!-- Essa pagina é um fomulario para coletar informações do usuário
-    afim de guia-lo para uma formulá para calcular suas calorias. -->
+    <!-- Essa pagina é um formulario para coletar informações do usuário
+    afim de guia-lo para uma fórmula para calcular suas calorias. -->
+    <link rel="manifest" href="LogoMarca/site.webmanifest" />
+    <link rel="icon" href="LogoMarca/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="LogoMarca/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="LogoMarca/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="LogoMarca/apple-touch-icon.png" />
   </head>
 
   <body>
@@ -15,7 +30,7 @@
     </header>
 
     <main>
-      <form id="form-triagem" action="#" method="post">
+      <form id="form-triagem" action="formula/planejamento.html" method="get">
         <!-- 1º Informações Pessoais -->
         <fieldset>
           <legend>Informações Pessoais</legend>
@@ -30,7 +45,6 @@
             <option value="" disabled selected>Selecione</option>
             <option value="feminino">Feminino</option>
             <option value="masculino">Masculino</option>
-            <option value="outro">Outro</option>
           </select>
 
           <label for="peso">Peso atual (kg):</label>
@@ -47,7 +61,6 @@
           <input type="number" id="altura" name="altura" min="50" required />
 
           <label for="atividade">Nível de Atividade Física:</label>
-          <!-- ESTUDAR ESSA PARTE -->
           <select id="atividade" name="atividade" aria-required="true" required>
             <option value="" disabled selected>Selecione</option>
             <option value="sedentario">Sedentário</option>
@@ -59,7 +72,6 @@
             </option>
           </select>
         </fieldset>
-        <br />
 
         <!-- Percentual de Gordura -->
         <fieldset>
@@ -73,38 +85,35 @@
             name="gordura"
             placeholder="Ex: 18.0"
             aria-describedby="gordura-info"
+            inputmode="numeric"
           />
         </fieldset>
-        <br />
 
         <!-- 2º Informação: Biotipo -->
         <section aria-describedby="biotipo-info">
-          <h2>Biotipo corporal não é fator determinante</h2>
-          <p id="biotipo-info">
-            Embora o biotipo influencie características físicas e o metabolismo,
-            ele
-            <strong>não define sozinho</strong> sua capacidade de emagrecer ou
-            ganhar massa muscular. A genética pode contribuir com até 30% a 40%
-            em condições como obesidade ou diabetes, mas o estilo de vida —
-            alimentação adequada, atividade física e acompanhamento profissional
-            — tem papel ainda mais decisivo. Com um plano nutricional
-            individualizado e disciplina, é possível alcançar resultados
-            expressivos <strong>independentemente do tipo corporal.</strong>
-          </p>
-
-          <p>
-            Ainda assim, entender o seu biotipo pode ser útil para ajustar
-            melhor os cálculos e estratégias. Embora as fórmulas não utilizem
-            diretamente o biotipo como variável, suas características — como
-            proporção de gordura e massa magra — ajudam a escolher a fórmula
-            mais adequada para estimar suas necessidades calóricas.
-          </p>
-
-          <p>
-            Por isso, pedimos que você selecione seu biotipo: essa informação
-            auxilia na personalização do cálculo e torna o planejamento mais
-            eficiente.
-          </p>
+          <h2>Selecione seu biotipo corporal</h2>
+          <details>
+            <summary>Saiba mais sobre biotipo corporal</summary>
+            <div class="biotipo-details">
+              <p id="biotipo-info">
+                Embora o biotipo influencie características físicas e o
+                metabolismo, ele <strong>não define sozinho</strong> sua
+                capacidade de emagrecer ou ganhar massa muscular. A genética
+                pode contribuir com até 30% a 40% em condições como obesidade ou
+                diabetes, mas o estilo de vida — alimentação adequada, atividade
+                física e acompanhamento profissional — tem papel ainda mais
+                decisivo. Com um plano nutricional individualizado e disciplina,
+                é possível alcançar resultados expressivos
+                <strong>independentemente do tipo corporal.</strong>
+              </p>
+              <p>
+                Entender o seu biotipo pode ser útil para ajustar melhor os
+                cálculos e estratégias. Suas características — como proporção de
+                gordura e massa magra — ajudam a escolher a fórmula mais
+                adequada para estimar suas necessidades calóricas.
+              </p>
+            </div>
+          </details>
 
           <h3>Não sabe seu biotipo? Descubra aqui:</h3>
           <p class="botao-container">
@@ -117,9 +126,20 @@
             </button>
           </p>
           <!-- Modal para Teste do Pulso -->
-          <div class="modal-overlay" id="modal-teste-pulso">
+          <div
+            class="modal-overlay"
+            id="modal-teste-pulso"
+            role="dialog"
+            aria-hidden="true"
+          >
             <div class="modal-content">
-              <button type="button" class="modal-close">x</button>
+              <button
+                type="button"
+                class="modal-close"
+                aria-label="Fechar modal"
+              >
+                x
+              </button>
               <h4>Teste do Pulso</h4>
               <p>
                 O médico William Sheldon desenvolveu um método simples para
@@ -162,40 +182,38 @@
           <p>Escolha abaixo a imagem que melhor representa seu biotipo:</p>
 
           <div class="biotipo-container">
-            <label class="biotipo-option">
+            <label class="biotipo-option" data-biotipo="ectomorfo">
               <img
-                src="ectomorfo.jpg"
+                src="imagens/ectomorfo.png"
                 alt="Ectomorfo"
-                width="100"
-                height="150"
+                width="150"
+                height="200"
               />
               <input type="radio" name="biotipo" value="ectomorfo" required />
               <span>Ectomorfo</span>
             </label>
-            <label class="biotipo-option">
+            <label class="biotipo-option" data-biotipo="endomorfo">
               <img
-                src="endomorfo.jpg"
+                src="imagens/endomorfo.png"
                 alt="Endomorfo"
-                width="100"
-                height="150"
+                width="150"
+                height="200"
               />
               <input type="radio" name="biotipo" value="endomorfo" />
               <span>Endomorfo</span>
             </label>
-            <label class="biotipo-option">
+            <label class="biotipo-option" data-biotipo="mesomorfo">
               <img
-                src="mesomorfo.jpg"
+                src="imagens/mesomorfo.png"
                 alt="Mesomorfo"
-                width="100"
-                height="150"
+                width="150"
+                height="200"
               />
               <input type="radio" name="biotipo" value="mesomorfo" />
               <span>Mesomorfo</span>
             </label>
           </div>
         </section>
-        <hr />
-        <br />
 
         <!-- 3º Objetivos -->
         <fieldset>
@@ -204,8 +222,7 @@
             <input
               type="radio"
               id="obj-manter"
-              name="objetivos[]"
-              radio
+              name="objetivo_composicao"
               value="manter"
             />
             Manter o Peso
@@ -214,7 +231,7 @@
             <input
               type="radio"
               id="obj-emagrecer"
-              name="objetivos[]"
+              name="objetivo_composicao"
               value="emagrecer"
             />
             Perder Peso (Emagrecer)
@@ -223,7 +240,7 @@
             <input
               type="radio"
               id="obj-hipertrofia"
-              name="objetivos[]"
+              name="objetivo_composicao"
               value="hipertrofia"
             />
             Ganhar Massa Muscular (Hipertrofia)
@@ -232,16 +249,15 @@
             <input
               type="radio"
               id="obj-aumentar"
-              name="objetivos[]"
+              name="objetivo_composicao"
               value="aumentar"
             />
             Aumentar o Peso (de forma saudável)
           </label>
         </fieldset>
-        <br />
 
         <fieldset>
-          <legend>Objetivos de Performance e Condicionamento Físico</legend>
+          <legend>Objetivos de Performance</legend>
           <p>Você pode selecionar mais de um, se desejar:</p>
           <label for="obj-forca">
             <input
@@ -280,7 +296,6 @@
             Melhorar a Flexibilidade
           </label>
         </fieldset>
-        <br />
 
         <!-- Informações Adicionais -->
         <fieldset>
@@ -294,44 +309,13 @@
           <label for="preferencias">Preferências alimentares:</label>
           <textarea id="preferencias" name="preferencias" rows="4"></textarea>
         </fieldset>
-        <br />
 
-        <!-- Botões -->
-        <div class="botoes-formulas">
-          <button
-            type="button"
-            class="botao"
-            onclick="calcularTMB('harris-benedict')"
-          >
-            Harris-Benedict
-          </button>
-          <button
-            type="button"
-            class="botao"
-            onclick="calcularTMB('mifflin-st-jeor')"
-          >
-            Mifflin-St Jeor
-          </button>
-          <button
-            type="button"
-            class="botao"
-            onclick="calcularTMB('katch-mcardle')"
-          >
-            Katch-McArdle
-          </button>
-          <button type="button" class="botao" onclick="calcularTMB('oms')">
-            OMS
-          </button>
-          <button type="button" class="botao" onclick="calcularTMB('owen')">
-            Owen
-          </button>
-          <button type="button" class="botao" onclick="calcularTMB('henry')">
-            Henry
-          </button>
-        </div>
+        <!-- Botão de Envio -->
+        <button type="submit" class="submit-btn">Calcular TMB e GET</button>
       </form>
     </main>
     <script src="modals.js"></script>
-    <script src="calculos.js"></script>
+    <script src="biotipo.js"></script>
+    <script src="validacao.js"></script>
   </body>
 </html>
