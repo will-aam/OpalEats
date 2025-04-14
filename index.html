@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>OpalEats</title>
-    <!-- Uma referência a algo precioso, com ênfase na alimentação -->
     <link rel="manifest" href="LogoMarca/site.webmanifest" />
     <link rel="icon" href="LogoMarca/favicon.ico" type="image/x-icon" />
     <link
@@ -21,7 +19,6 @@
       href="LogoMarca/favicon-16x16.png"
     />
     <link rel="apple-touch-icon" href="LogoMarca/apple-touch-icon.png" />
-
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -56,20 +53,26 @@
         margin-top: 20px;
       }
       .botao:hover {
-        background-color: #023f44;
+        background-color: #03545a; /* Ajustado para feedback visual */
       }
       @media (max-width: 600px) {
         h1 {
           font-size: 1.5em;
         }
       }
+      /* Estilos adicionais para as novas seções */
+      ol {
+        margin: 15px 0;
+        padding-left: 20px;
+      }
+      section {
+        margin-bottom: 30px;
+      }
     </style>
   </head>
-
   <body>
     <header id="cabecalho">
       <hgroup>
-        <!-- Introdução -->
         <h1>Bem-vindo(a) à OpalEats!</h1>
         <h2>Vamos juntos em direção ao seu objetivo!</h2>
       </hgroup>
@@ -84,7 +87,60 @@
         primeiro passo para alcançar resultados com saúde, equilíbrio e
         eficiência.
       </p>
-      <a href="formulario.html" class="botao">Começar agora</a>
+
+      <a
+        href="formulario.html"
+        class="botao"
+        aria-label="Iniciar o cálculo do plano alimentar"
+        >Começar agora</a
+      >
+
+      <!-- Resumo -->
+      <section aria-labelledby="resumo">
+        <h2 id="resumo">Resumo</h2>
+        <p>
+          <strong>TMB (Taxa Metabólica Basal):</strong> Quantidade de calorias
+          que seu corpo gasta em repouso para funções vitais, como respiração e
+          batimentos cardíacos.
+        </p>
+        <p>
+          <strong>GET (Gasto Energético Total):</strong> TMB mais as calorias
+          gastas com atividades diárias (trabalho, exercícios, caminhadas).
+          Calculado como GET = TMB × fator de atividade.
+        </p>
+      </section>
+
+      <!-- Fórmulas -->
+      <section aria-labelledby="formulas">
+        <h2 id="formulas">Fórmulas para calcular a TMB</h2>
+        <ol>
+          <li>
+            <strong>Harris-Benedict:</strong> Fórmula clássica que usa peso,
+            altura, idade e sexo. Simples, mas menos precisa para atletas ou
+            pessoas com muita massa magra.
+          </li>
+          <li>
+            <strong>Mifflin-St Jeor:</strong> Mais moderna e confiável, usa
+            peso, altura, idade e sexo. Ideal para a maioria das pessoas.
+          </li>
+          <li>
+            <strong>Katch-McArdle:</strong> Baseada na massa magra, muito
+            precisa se você souber sua composição corporal (% de gordura).
+          </li>
+          <li>
+            <strong>OMS:</strong> Desenvolvida para populações amplas, usa peso
+            e sexo, mas é menos personalizada.
+          </li>
+          <li>
+            <strong>Owen:</strong> Usa peso, altura, idade e sexo. Boa para
+            casos simples, mas menos comum.
+          </li>
+          <li>
+            <strong>Henry:</strong> Geral, usa peso, altura, idade e sexo.
+            Aplicada em populações variadas, mas pouco usada.
+          </li>
+        </ol>
+      </section>
     </main>
 
     <footer>

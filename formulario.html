@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="formulario.css" />
     <title>Triagem - OpalEats</title>
-    <!-- Essa pagina é um formulario para coletar informações do usuário
-    afim de guia-lo para uma fórmula para calcular suas calorias. -->
     <link rel="manifest" href="LogoMarca/site.webmanifest" />
     <link rel="icon" href="LogoMarca/favicon.ico" type="image/x-icon" />
     <link
@@ -58,7 +56,22 @@
           />
 
           <label for="altura">Altura (cm):</label>
-          <input type="number" id="altura" name="altura" min="50" required />
+          <input
+            type="number"
+            step="1"
+            id="altura"
+            name="altura"
+            min="50"
+            required
+          />
+          <p
+            id="altura-error"
+            class="error-message"
+            style="display: none; color: red"
+          >
+            Só para confirmar: essa altura está em centímetros? 🤔 Use algo como
+            170 cm, não 1.70 m.
+          </p>
 
           <label for="atividade">Nível de Atividade Física:</label>
           <select id="atividade" name="atividade" aria-required="true" required>
@@ -76,17 +89,16 @@
         <!-- Percentual de Gordura -->
         <fieldset>
           <legend>Percentual de Gordura Corporal (Opcional)</legend>
-          <p id="gordura-info">Você sabe sua % de gordura corporal?</p>
-          <label for="gordura">Percentual de Gordura (%):</label>
+          <label for="gordura">Digite um número, se souber:</label>
           <input
             type="number"
-            step="0.1"
             id="gordura"
             name="gordura"
-            placeholder="Ex: 18.0"
+            placeholder="Exemplo: 18 (sem o símbolo %)"
             aria-describedby="gordura-info"
             inputmode="numeric"
           />
+          <p id="gordura-info">🔍 Não tem certeza? Pode deixar em branco!</p>
         </fieldset>
 
         <!-- 2º Informação: Biotipo -->
@@ -314,8 +326,33 @@
         <button type="submit" class="submit-btn">Calcular TMB e GET</button>
       </form>
     </main>
+
     <script src="modals.js"></script>
     <script src="biotipo.js"></script>
     <script src="validacao.js"></script>
+    <script>
+      // Validação do campo de altura
+      const alturaInput = document.getElementById("altura");
+      const alturaError = document.getElementById("altura-error");
+
+      alturaInput.addEventListener("input", () => {
+        const value = alturaInput.value;
+        // Verifica se o valor contém vírgula, ponto ou não é um número inteiro
+        if (
+          value.includes(",") ||
+          value.includes(".") ||
+          isNaN(value) ||
+          value % 1 !== 0
+        ) {
+          alturaError.style.display = "block";
+          alturaInput.setCustomValidity(
+            "Por favor, insira a altura em centímetros (ex.: 170)."
+          );
+        } else {
+          alturaError.style.display = "none";
+          alturaInput.setCustomValidity("");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-// validacao.js
 document
   .getElementById("form-triagem")
   .addEventListener("submit", function (e) {
@@ -24,7 +23,7 @@ document
     const nome = document.getElementById("nome").value.trim();
     if (nome === "") {
       showError("nome", "Por favor, insira seu nome.");
-    } else if (!/^[a-zA-Z\s]+$/.test(nome)) {
+    } else if (!/^[\p{L}\s]+$/u.test(nome)) {
       showError("nome", "O nome deve conter apenas letras e espaços.");
     }
 
@@ -102,9 +101,5 @@ document
     // Se inválido, impede o envio
     if (!isValid) {
       e.preventDefault();
-      return;
     }
-
-    // Se válido, permite o envio para formula/planejamento.html
-    // Formulário redireciona automaticamente via action="formula/planejamento.html"
   });

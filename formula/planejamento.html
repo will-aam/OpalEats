@@ -23,61 +23,11 @@
   </head>
   <body>
     <header>
-      <h1>Como usamos suas informações?</h1>
-      <p>
-        Utilizamos seus dados para calcular sua
-        <strong>Taxa Metabólica Basal (TMB)</strong> e seu
-        <strong>Gasto Energético Total (GET)</strong>, criando um plano
-        alimentar personalizado.
-      </p>
+      <h1>Seu Plano Nutricional</h1>
+      <p id="greeting">Aguardando dados...</p>
     </header>
 
     <main>
-      <section aria-labelledby="resumo">
-        <h2 id="resumo">Resumo</h2>
-        <p>
-          <strong>TMB (Taxa Metabólica Basal):</strong> Quantidade de calorias
-          que seu corpo gasta em repouso para funções vitais, como respiração e
-          batimentos cardíacos.
-        </p>
-        <p>
-          <strong>GET (Gasto Energético Total):</strong> TMB mais as calorias
-          gastas com atividades diárias (trabalho, exercícios, caminhadas).
-          Calculado como GET = TMB × fator de atividade.
-        </p>
-      </section>
-
-      <section aria-labelledby="formulas">
-        <h2 id="formulas">Fórmulas para calcular a TMB</h2>
-        <ol>
-          <li>
-            <strong>Harris-Benedict:</strong> Fórmula clássica que usa peso,
-            altura, idade e sexo. Simples, mas menos precisa para atletas ou
-            pessoas com muita massa magra.
-          </li>
-          <li>
-            <strong>Mifflin-St Jeor:</strong> Mais moderna e confiável, usa
-            peso, altura, idade e sexo. Ideal para a maioria das pessoas.
-          </li>
-          <li>
-            <strong>Katch-McArdle:</strong> Baseada na massa magra, muito
-            precisa se você souber sua composição corporal (% de gordura).
-          </li>
-          <li>
-            <strong>OMS:</strong> Desenvolvida para populações amplas, usa peso
-            e sexo, mas é menos personalizada.
-          </li>
-          <li>
-            <strong>Owen:</strong> Usa peso, altura, idade e sexo. Boa para
-            casos simples, but menos comum.
-          </li>
-          <li>
-            <strong>Henry:</strong> Geral, usa peso, altura, idade e sexo.
-            Aplicada em populações variadas, mas pouco usada.
-          </li>
-        </ol>
-      </section>
-
       <section aria-labelledby="resultado">
         <h2 id="resultado">Seu cálculo</h2>
         <div class="formula-box">
@@ -100,5 +50,12 @@
     </main>
 
     <script src="calculos.js"></script>
+    <script>
+      // Recuperar e exibir o nome
+      const urlParams = new URLSearchParams(window.location.search);
+      const nome = urlParams.get("nome") || "Usuário";
+      const greeting = document.getElementById("greeting");
+      greeting.textContent = `Olá ${nome}, aqui está seu resultado.`;
+    </script>
   </body>
 </html>
