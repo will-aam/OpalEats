@@ -322,8 +322,76 @@
           <textarea id="preferencias" name="preferencias" rows="4"></textarea>
         </fieldset>
 
+        <!-- Seleção da Fórmula -->
+        <fieldset class="formula-selection">
+          <legend>Escolha a Fórmula de Cálculo</legend>
+          <p>Selecione uma opção:</p>
+          <div class="formula-options">
+            <label for="formula-recomendada">
+              <input
+                type="radio"
+                id="formula-recomendada"
+                name="formula"
+                value="recomendada"
+                checked
+                required
+              />
+              Fórmula Recomendada
+            </label>
+            <label for="formula-katch-mcardle">
+              <input
+                type="radio"
+                id="formula-katch-mcardle"
+                name="formula"
+                value="katch-mcardle"
+              />
+              Katch-McArdle
+            </label>
+            <label for="formula-mifflin-st-jeor">
+              <input
+                type="radio"
+                id="formula-mifflin-st-jeor"
+                name="formula"
+                value="mifflin-st-jeor"
+              />
+              Mifflin-St Jeor
+            </label>
+            <label for="formula-harris-benedict">
+              <input
+                type="radio"
+                id="formula-harris-benedict"
+                name="formula"
+                value="harris-benedict"
+              />
+              Harris-Benedict
+            </label>
+            <label for="formula-oms">
+              <input type="radio" id="formula-oms" name="formula" value="oms" />
+              OMS
+            </label>
+            <label for="formula-owen">
+              <input
+                type="radio"
+                id="formula-owen"
+                name="formula"
+                value="owen"
+              />
+              Owen
+            </label>
+            <label for="formula-henry">
+              <input
+                type="radio"
+                id="formula-henry"
+                name="formula"
+                value="henry"
+              />
+              Henry
+            </label>
+          </div>
+        </fieldset>
+
         <!-- Botão de Envio -->
-        <button type="submit" class="submit-btn">Calcular TMB e GET</button>
+        <button type="submit" class="submit-btn">Calcular</button>
       </form>
     </main>
 
