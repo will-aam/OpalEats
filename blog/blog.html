@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="educational-topics" aria-labelledby="topics-heading">
+      <header class="educational-topics__header">
+        <h2 class="educational-topics__title" id="topics-heading">
+          Tópicos Educativos
+        </h2>
+        <p class="educational-topics__description">
+          Explore conceitos fundamentais sobre metabolismo e gasto energético.
+        </p>
+      </header>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <h2
+            class="educational-title"
+            aria-expanded="false"
+            aria-controls="educationalContent1"
+          >
+            Taxa Metabólica Basal (TMB) e Gasto Energético Total (GET)
+          </h2>
+          <div class="educational-text" id="educationalContent1">
+            <div class="summary">
+              <h3>Sumário</h3>
+              <ul>
+                <li>
+                  <a href="#tmb-definition">O Que é a Taxa Metabólica Basal?</a>
+                </li>
+                <li>
+                  <a href="#tmb-factors">Fatores que Influenciam a TMB</a>
+                </li>
+                <li><a href="#tmb-calculation">Como Calcular a TMB</a></li>
+                <li>
+                  <a href="#get-definition"
+                    >O Que é o Gasto Energético Total?</a
+                  >
+                </li>
+                <li>
+                  <a href="#tmb-get-relation">Relação Entre TMB e GET</a>
+                </li>
+                <li>
+                  <a href="#get-calculation"
+                    >Cálculo do Gasto Energético Total</a
+                  >
+                </li>
+                <li>
+                  <a href="#tmb-get-importance"
+                    >A Importância de Conhecer TMB e GET</a
+                  >
+                </li>
+                <li><a href="#conclusion">Conclusão</a></li>
+              </ul>
+            </div>
+            <p>
+              A Taxa Metabólica Basal (TMB) e o Gasto Energético Total (GET) são
+              conceitos fundamentais para quem busca entender o metabolismo
+              corporal e gerenciar efetivamente o peso e a saúde. A TMB
+              representa a energia mínima necessária para manter as funções
+              vitais em repouso, enquanto o GET inclui essa taxa basal mais as
+              calorias gastas em todas as atividades diárias. Existem diversos
+              sites e calculadoras online que oferecem ferramentas para calcular
+              esses valores, com base em fórmulas científicas como
+              Harris-Benedict e Mifflin-St Jeor, além de explicações detalhadas
+              sobre como interpretar e aplicar esses dados para objetivos de
+              saúde e condicionamento físico.
+            </p>
+            <h4 id="tmb-definition">O Que é a Taxa Metabólica Basal (TMB)</h4>
+            <p>
+              A Taxa Metabólica Basal (TMB) representa a quantidade mínima de
+              energia que o corpo humano necessita para manter suas funções
+              vitais em estado de repouso completo. Essas funções incluem a
+              respiração, circulação sanguínea, regulação da temperatura
+              corporal, entre outros processos fisiológicos essenciais para a
+              manutenção da vida. Em termos percentuais, a TMB corresponde a
+              aproximadamente 60% a 70% do gasto energético total diário da
+              maioria das pessoas.
+            </p>
+            <p>
+              Este valor basal é fundamental para quem deseja controlar o peso
+              corporal, pois permite estimar quantas calorias o organismo
+              consome naturalmente, mesmo sem realizar atividades físicas.
+              Conhecer a TMB também auxilia na prevenção de condições como
+              obesidade, diabetes e hipertensão, já que possibilita adequar a
+              alimentação às necessidades energéticas reais do corpo.
+            </p>
+            <h4 id="tmb-factors">Fatores que Influenciam a TMB</h4>
+            <p>
+              A taxa metabólica basal não é um valor fixo e universal, variando
+              significativamente entre diferentes indivíduos devido a múltiplos
+              fatores:
+            </p>
+            <ul>
+              <li>
+                <strong>Sexo:</strong> Homens geralmente apresentam uma TMB mais
+                elevada do que mulheres, principalmente devido ao maior
+                percentual de massa muscular que naturalmente possuem.
+              </li>
+              <li>
+                <strong>Idade:</strong> À medida que envelhecemos, a TMB tende a
+                diminuir, o que explica parcialmente o ganho de peso comum em
+                idades mais avançadas.
+              </li>
+              <li>
+                <strong>Composição corporal:</strong> A quantidade de tecido
+                muscular influencia diretamente a TMB, pois os músculos consomem
+                mais energia do que o tecido adiposo, mesmo em estado de
+                repouso.
+              </li>
+              <li>
+                <strong>Genética:</strong> Fatores hereditários podem determinar
+                diferenças metabólicas significativas entre indivíduos com
+                características físicas semelhantes.
+              </li>
+              <li>
+                <strong>Hormônios:</strong> O funcionamento da tireoide e outros
+                mecanismos hormonais podem acelerar ou reduzir o metabolismo
+                basal.
+              </li>
+            </ul>
+            <h4 id="tmb-calculation">Como Calcular a TMB</h4>
+            <p>
+              Existem diversas fórmulas científicas desenvolvidas para estimar a
+              Taxa Metabólica Basal. Uma das mais tradicionais e amplamente
+              utilizadas é a equação de Harris-Benedict, criada em 1918 e
+              revisada em 1984.
+            </p>
+            <h5>Equação de Harris-Benedict</h5>
+            <p>
+              Para homens:<br />TMB = 66 + (13,7 × peso em kg) + (5 × altura em
+              cm) - (6,8 × idade em anos)
+            </p>
+            <p>
+              Para mulheres:<br />TMB = 655 + (9,6 × peso em kg) + (1,8 × altura
+              em cm) - (4,7 × idade em anos)
+            </p>
+            <p>
+              Por exemplo, para um homem de 25 anos, pesando 70 kg e com altura
+              de 1,80 m, o cálculo seria:<br />
+              TMB = 66 + (13,7 × 70) + (5 × 180) - (6,8 × 25)<br />
+              TMB = 66 + 959 + 900 - 170<br />
+              TMB = 1.755 calorias por dia
+            </p>
+            <p>
+              Outra fórmula bastante utilizada é a equação de Mifflin-St Jeor,
+              considerada por alguns especialistas como mais precisa para a
+              população contemporânea.
+            </p>
+            <h4 id="get-definition">O Que é o Gasto Energético Total (GET)</h4>
+            <p>
+              O Gasto Energético Total (GET) representa a quantidade total de
+              calorias que um indivíduo consome durante um período de 24 horas.
+              Diferentemente da TMB, que considera somente as funções básicas do
+              organismo em repouso, o GET incorpora todas as atividades
+              realizadas ao longo do dia, incluindo exercícios físicos, tarefas
+              domésticas, trabalho e até mesmo o processo de digestão dos
+              alimentos.
+            </p>
+            <h4 id="tmb-get-relation">Relação Entre TMB e GET</h4>
+            <p>
+              A proporção entre TMB e outros componentes do GET varia
+              significativamente conforme o estilo de vida de cada pessoa:
+            </p>
+            <ul>
+              <li>
+                <strong>Indivíduos sedentários:</strong> Aproximadamente 70% do
+                GET é atribuído à TMB, enquanto os 30% restantes correspondem às
+                atividades diárias básicas e ao efeito térmico dos alimentos.
+              </li>
+              <li>
+                <strong>Pessoas fisicamente ativas:</strong> Cerca de 50% do GET
+                é representado pela TMB, enquanto os outros 50% provêm de
+                atividades físicas como esportes, academia, dança, entre outros.
+              </li>
+            </ul>
+            <h4 id="get-calculation">Cálculo do Gasto Energético Total</h4>
+            <p>
+              O método mais comum para calcular o GET consiste em multiplicar a
+              TMB por um fator correspondente ao nível de atividade física do
+              indivíduo:
+            </p>
+            <ul>
+              <li>Sedentário (pouco ou nenhum exercício): TMB × 1,2</li>
+              <li>
+                Levemente ativo (exercício leve 1-3 dias por semana): TMB ×
+                1,375
+              </li>
+              <li>
+                Moderadamente ativo (exercício moderado 3-5 dias por semana):
+                TMB × 1,55
+              </li>
+              <li>
+                Muito ativo (exercício intenso 6-7 dias por semana): TMB × 1,725
+              </li>
+              <li>
+                Extremamente ativo (exercício muito intenso, trabalho físico ou
+                treinamento duas vezes ao dia): TMB × 1,9
+              </li>
+            </ul>
+            <h4 id="tmb-get-importance">A Importância de Conhecer TMB e GET</h4>
+            <p>
+              Compreender a TMB e o GET proporciona diversos benefícios para
+              quem busca melhorar a saúde e a composição corporal:
+            </p>
+            <ul>
+              <li>
+                <strong>Controle de peso:</strong> Conhecer o gasto calórico
+                diário permite estabelecer metas realistas de consumo alimentar
+                para perda, ganho ou manutenção de peso.
+              </li>
+              <li>
+                <strong>Planejamento nutricional:</strong> É possível adequar a
+                ingestão de macronutrientes (proteínas, carboidratos e gorduras)
+                conforme as necessidades específicas do organismo.
+              </li>
+              <li>
+                <strong>Otimização do treinamento:</strong> Atletas e
+                praticantes de atividades físicas podem ajustar a intensidade e
+                volume dos exercícios conforme seus objetivos metabólicos.
+              </li>
+              <li>
+                <strong>Prevenção de doenças:</strong> O controle adequado da
+                ingestão calórica ajuda a prevenir condições como obesidade,
+                diabetes tipo 2 e doenças cardiovasculares.
+              </li>
+            </ul>
+            <h4 id="conclusion">Conclusão</h4>
+            <p>
+              A Taxa Metabólica Basal (TMB) e o Gasto Energético Total (GET) são
+              conceitos fundamentais para quem busca compreender o funcionamento
+              do metabolismo e implementar estratégias eficientes de controle de
+              peso e saúde. Embora existam fórmulas e calculadoras que
+              possibilitam estimar esses valores, é importante lembrar que tais
+              métodos fornecem apenas aproximações, que podem variar de acordo
+              com características individuais não contempladas nas equações
+              padrão.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2
+            class="educational-title"
+            aria-expanded="false"
+            aria-controls="educationalContent2"
+          >
+            Fórmulas de TMB/GER e Influência Individual
+          </h2>
+          <div class="educational-text" id="educationalContent2">
+            <div class="summary">
+              <h3>Sumário</h3>
+              <ul>
+                <li>
+                  <a href="#fundamentals"
+                    >Fundamentos da Taxa Metabólica Basal e do Gasto Energético
+                    em Repouso</a
+                  >
+                </li>
+                <li>
+                  <a href="#main-formulas"
+                    >Principais Fórmulas para Estimativa da TMB/GER</a
+                  >
+                </li>
+                <li>
+                  <a href="#factors-choice"
+                    >Fatores que Influenciam a Escolha da Fórmula</a
+                  >
+                </li>
+                <li>
+                  <a href="#formulas-comparison"
+                    >Comparação Entre as Principais Fórmulas</a
+                  >
+                </li>
+                <li>
+                  <a href="#practical-applications"
+                    >Aplicações Práticas e Implicações Clínicas</a
+                  >
+                </li>
+                <li>
+                  <a href="#practical-examples"
+                    >Exemplos Práticos de Aplicação das Fórmulas</a
+                  >
+                </li>
+                <li>
+                  <a href="#limitations"
+                    >Limitações das Fórmulas e Considerações Finais</a
+                  >
+                </li>
+                <li><a href="#conclusion2">Conclusão</a></li>
+              </ul>
+            </div>
+            <h3>
+              A Escolha da Fórmula para Estimar a Taxa Metabólica Basal (TMB) e
+              o Gasto Energético em Repouso (GER): Influências das
+              Características Individuais
+            </h3>
+            <p>
+              A escolha da fórmula para estimar a Taxa Metabólica Basal (TMB) ou
+              o Gasto Energético em Repouso (GER) é um passo fundamental na
+              avaliação das necessidades energéticas de um indivíduo. Essa
+              decisão deve ser pautada por uma análise criteriosa das
+              características pessoais, como idade, sexo, composição corporal,
+              nível de atividade física e condições de saúde. Diversas fórmulas
+              foram desenvolvidas ao longo do tempo, cada uma com indicações
+              específicas e graus variados de precisão, dependendo do grupo
+              populacional a que se destinam. Este relatório oferece uma análise
+              exaustiva das principais equações utilizadas para estimar TMB/GER,
+              discute os fatores que influenciam a escolha da fórmula mais
+              adequada e explora as implicações práticas e clínicas dessa
+              seleção.
+            </p>
+            <h4 id="fundamentals">
+              Fundamentos da Taxa Metabólica Basal e do Gasto Energético em
+              Repouso
+            </h4>
+            <p>
+              A Taxa Metabólica Basal (TMB) representa a quantidade mínima de
+              energia necessária para manter as funções vitais do organismo em
+              repouso absoluto, como respiração, circulação sanguínea,
+              manutenção da temperatura corporal e atividade do sistema nervoso
+              central. O Gasto Energético em Repouso (GER), embora
+              frequentemente utilizado como sinônimo da TMB, pode incluir
+              pequenas atividades realizadas em repouso, como a digestão de
+              alimentos, sendo ligeiramente superior à TMB em termos
+              energéticos.
+            </p>
+            <p>
+              O entendimento desses conceitos é fundamental para o planejamento
+              nutricional e para a prescrição de dietas, seja para manutenção,
+              perda ou ganho de peso. A correta estimativa da TMB/GER permite
+              ajustar a ingestão calórica à real necessidade do organismo,
+              evitando tanto déficits energéticos indesejados quanto excessos
+              que possam levar ao acúmulo de gordura corporal.
+            </p>
+            <h4 id="main-formulas">
+              Principais Fórmulas para Estimativa da TMB/GER
+            </h4>
+            <p>
+              Diversas equações foram propostas ao longo das décadas para
+              estimar a TMB/GER, cada uma baseada em populações específicas e
+              com diferentes variáveis consideradas em seus cálculos. Entre as
+              fórmulas mais utilizadas destacam-se as de Harris-Benedict,
+              Mifflin-St Jeor, Katch-McArdle e as equações propostas pela
+              Organização Mundial da Saúde (OMS).
+            </p>
+            <h5>Equação de Harris-Benedict</h5>
+            <p>
+              Desenvolvida em 1919, a equação de Harris-Benedict foi uma das
+              primeiras tentativas de estimar a TMB a partir de variáveis
+              antropométricas. As equações são:
+            </p>
+            <p>
+              Para homens:<br />TMB = 66,5 + (13,75 × peso em kg) + (5,003 ×
+              altura em cm) − (6,755 × idade em anos)
+            </p>
+            <p>
+              Para mulheres:<br />TMB = 655,1 + (9,563 × peso em kg) + (1,850 ×
+              altura em cm) − (4,676 × idade em anos)
+            </p>
+            <p>
+              Ela tende a superestimar a TMB em populações com sobrepeso ou
+              obesidade.
+            </p>
+            <h5>Equação de Mifflin-St Jeor</h5>
+            <p>
+              Proposta em 1990, é considerada mais precisa para adultos com
+              sobrepeso e obesidade. As equações são:
+            </p>
+            <p>
+              Para homens:<br />TMB = (10 × peso em kg) + (6,25 × altura em cm)
+              − (5 × idade em anos) + 5
+            </p>
+            <p>
+              Para mulheres:<br />TMB = (10 × peso em kg) + (6,25 × altura em
+              cm) − (5 × idade em anos) − 161
+            </p>
+            <h5>Equação de Katch-McArdle</h5>
+            <p>
+              Desenvolvida em 1975, utiliza a massa magra:<br />TMB = 370 +
+              (21,6 × massa magra em kg)
+            </p>
+            <p>É ideal para atletas ou indivíduos com alta massa muscular.</p>
+            <h5>Equações da Organização Mundial da Saúde (OMS)</h5>
+            <p>
+              Desenvolvidas para diferentes faixas etárias, como:<br />Homens
+              (喧 (18-30 anos): TMB = 15,3 × peso em kg + 679<br />Mulheres
+              (18-30 anos): TMB = 14,7 × peso em kg + 496
+            </p>
+            <h4 id="factors-choice">
+              Fatores que Influenciam a Escolha da Fórmula
+            </h4>
+            <p>A seleção da fórmula depende de fatores como:</p>
+            <ul>
+              <li>
+                <strong>Idade:</strong> A TMB diminui com o envelhecimento
+                devido à redução da massa magra.
+              </li>
+              <li>
+                <strong>Sexo:</strong> Homens têm TMB mais alta devido à maior
+                massa muscular.
+              </li>
+              <li>
+                <strong>Composição corporal:</strong> A massa magra é mais
+                metabolicamente ativa que o tecido adiposo.
+              </li>
+              <li>
+                <strong>Nível de atividade física:</strong> Afeta o cálculo do
+                GET, mas não diretamente a TMB.
+              </li>
+              <li>
+                <strong>Condições de saúde:</strong> Doenças ou medicamentos
+                podem alterar a TMB.
+              </li>
+            </ul>
+            <h4 id="formulas-comparison">
+              Comparação Entre as Principais Fórmulas: Vantagens, Limitações e
+              Aplicações
+            </h4>
+            <p>
+              <strong>Harris-Benedict:</strong> Fácil de usar, mas superestima
+              em obesos.<br /><strong>Mifflin-St Jeor:</strong> Mais precisa
+              para adultos com sobrepeso.<br /><strong>Katch-McArdle:</strong>
+              Ideal para atletas, requer composição corporal.<br /><strong
+                >OMS:</strong
+              >
+              Boa para crianças, adolescentes e idosos.
+            </p>
+            <h4 id="practical-applications">
+              Aplicações Práticas e Implicações Clínicas
+            </h4>
+            <p>
+              <strong>Planejamento nutricional:</strong> Base para calcular o
+              GET.<br /><strong>Prescrição de dietas:</strong> Ajusta calorias
+              para emagrecimento ou ganho de massa.<br /><strong
+                >Pacientes clínicos:</strong
+              >
+              Evita complicações em estados hipermetabólicos.<br /><strong
+                >Esportes:</strong
+              >
+              Otimiza desempenho e recuperação.
+            </p>
+            <h4 id="practical-examples">
+              Exemplos Práticos de Aplicação das Fórmulas
+            </h4>
+            <p>
+              <strong>Idoso (homem, 65 anos, 70 kg, 170 cm):</strong><br />TMB
+              (OMS) = 13,5 × 70 + 487 = 1.435 kcal/dia
+            </p>
+            <p>
+              <strong>Atleta (homem, 25 anos, 80 kg, 10% gordura):</strong
+              ><br />TMB (Katch-McArdle) = 370 + (21,6 × 72) = 1.922 kcal/dia
+            </p>
+            <p>
+              <strong
+                >Adulto com sobrepeso (mulher, 40 anos, 85 kg, 165 cm):</strong
+              ><br />TMB (Mifflin-St Jeor) = (10 × 85) + (6,25 × 165) − (5 × 40)
+              − 161 = 1.520,25 kcal/dia
+            </p>
+            <h4 id="limitations">
+              Limitações das Fórmulas e Considerações Finais
+            </h4>
+            <p>
+              Nenhuma fórmula é universalmente precisa. Fatores como genética,
+              hormônios e condições clínicas podem exigir ajustes. A
+              calorimetria indireta é o padrão-ouro, mas é inacessível.
+              Consultas com profissionais são recomendadas.
+            </p>
+            <h4 id="conclusion2">Conclusão</h4>
+            <p>
+              A escolha da fórmula para TMB/GER deve considerar idade, sexo,
+              composição corporal e saúde. Mifflin-St Jeor é ideal para obesos,
+              Katch-McArdle para atletas, e OMS para faixas etárias específicas.
+              A avaliação profissional garante precisão e segurança.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2
+            class="educational-title"
+            aria-expanded="false"
+            aria-controls="educationalContent3"
+          >
+            Biotipo e Escolha da Fórmula para Estimar TMB/GER
+          </h2>
+          <div class="educational-text" id="educationalContent3">
+            <div class="summary">
+              <h3>Sumário</h3>
+              <ul>
+                <li>
+                  <a href="#somatotype-fundamentals"
+                    >Fundamentação Teórica: Somatotipos e Metabolismo</a
+                  >
+                </li>
+                <li>
+                  <a href="#formulas-analysis"
+                    >Análise Crítica das Principais Fórmulas</a
+                  >
+                </li>
+                <li>
+                  <a href="#somatotype-strategies"
+                    >Estratégias de Seleção Baseadas em Somatotipo</a
+                  >
+                </li>
+                <li>
+                  <a href="#additional-factors"
+                    >Fatores Adicionais na Escolha da Fórmula</a
+                  >
+                </li>
+                <li>
+                  <a href="#conclusion3">Conclusão e Recomendações Práticas</a>
+                </li>
+              </ul>
+            </div>
+            <h3>
+              Influência do Somatotipo na Escolha de Fórmulas para Estimativa da
+              Taxa Metabólica Basal e Gasto Energético
+            </h3>
+            <p>
+              A estimativa precisa da Taxa Metabólica Basal (TMB) e do Gasto
+              Energético em Repouso (GER) é essencial para planejamentos
+              nutricionais e programas de exercícios. O somatotipo –
+              classificação de William Sheldon que categoriza corpos em
+              ectomorfo, mesomorfo e endomorfo com base em gordura,
+              muscularidade e linearidade – influencia diretamente a escolha de
+              fórmulas preditivas como Harris-Benedict, Mifflin-St Jeor e
+              Katch-McArdle. Este relatório analisa como essas categorias afetam
+              a seleção de equações e oferece diretrizes práticas para
+              profissionais.
+            </p>
+            <h4 id="somatotype-fundamentals">
+              Fundamentação Teórica: Somatotipos e Metabolismo
+            </h4>
+            <p>
+              O somatotipo reflete a distribuição de massa magra e gordura,
+              impactando o metabolismo. Endomorfos (tendência ao acúmulo de
+              gordura) têm TMB reduzida devido à baixa demanda energética do
+              tecido adiposo. Mesomorfos (musculares) apresentam GER elevado,
+              pois músculos consomem mais calorias em repouso. Ectomorfos
+              (magros e lineares) podem ter metabolismo acelerado, mas com menor
+              reserva energética.
+            </p>
+            <p>
+              Essas diferenças tornam equações genéricas, como Harris-Benedict,
+              menos precisas. Estudos mostram que ela superestima a TMB em até
+              15% em endomorfos e subestima em ectomorfos com alta massa magra.
+            </p>
+            <h4 id="formulas-analysis">
+              Análise Crítica das Principais Fórmulas de Estimativa
+            </h4>
+            <h5>Equação de Harris-Benedict (1919)</h5>
+            <p>
+              Considera peso, altura, idade e sexo:<br />
+              Homens: TMB = 66,5 + (13,75 × peso em kg) + (5,003 × altura em cm)
+              − (6,75 × idade em anos)<br />
+              Mulheres: TMB = 655,1 + (9,563 × peso em kg) + (1,850 × altura em
+              cm) − (4,676 × idade em anos)
+            </p>
+            <p>
+              <strong>Limitações:</strong><br />
+              - Superestima TMB em endomorfos (erros de até 300 kcal/dia em IMC
+              > 30).<br />
+              - Subestima em mesomorfos atletas (10-20% abaixo do valor real).
+            </p>
+            <h5>Equação de Mifflin-St Jeor (1990)</h5>
+            <p>
+              Padrão-ouro para populações gerais:<br />
+              Homens: TMB = (10 × peso em kg) + (6,25 × altura em cm) − (5 ×
+              idade em anos) + 5<br />
+              Mulheres: TMB = (10 × peso em kg) + (6,25 × altura em cm) − (5 ×
+              idade em anos) − 161
+            </p>
+            <p>
+              <strong>Vantagens:</strong> Erro médio de 5% em IMC 19-25, ideal
+              para mesomorfos.<br />
+              <strong>Limitações:</strong> Superestima em endomorfos severos
+              (8-12%).
+            </p>
+            <h5>Equação de Katch-McArdle (1983)</h5>
+            <p>
+              Baseada na massa livre de gordura (MLG):<br />
+              TMB = 370 + (21,6 × MLG em kg)
+            </p>
+            <p>
+              <strong>Vantagens:</strong> Precisão de 92% em ectomorfos e
+              mesomorfos com MLG conhecida.<br />
+              <strong>Limitações:</strong> Requer bioimpedância ou DEXA,
+              limitando uso em clínicas sem equipamentos.
+            </p>
+            <h4 id="somatotype-strategies">
+              Estratégias de Seleção Baseadas em Somatotipo
+            </h4>
+            <p>
+              <strong>Ectomorfos:</strong> Usar Katch-McArdle se MLG for
+              conhecida; caso contrário, Mifflin-St Jeor, que ajusta para alta
+              estatura.<br />
+              <strong>Mesomorfos:</strong> Mifflin-St Jeor para cenários gerais;
+              Katch-McArdle para atletas com MLG > 45 kg, reduzindo erros a ±50
+              kcal/dia.<br />
+              <strong>Endomorfos:</strong> Mifflin-St Jeor com fator de correção
+              (0,9-0,95) para evitar superestimativas; Katch-McArdle se MLG for
+              mensurada.
+            </p>
+            <h4 id="additional-factors">
+              Fatores Adicionais na Escolha da Fórmula
+            </h4>
+            <p>
+              <strong>Dados antropométricos:</strong> Sem bioimpedância,
+              Mifflin-St Jeor é a melhor opção; com MLG, Katch-McArdle é
+              preferível.<br />
+              <strong>Objetivos:</strong><br />
+              - Perda de peso: Mifflin-St Jeor com fator de atividade 1,2-1,3
+              para déficit seguro.<br />
+              - Hipertofia: Katch-McArdle para superávit preciso.<br />
+              - Idosos: Mifflin-St Jeor, evitando subestimação da
+              Harris-Benedict (até 18%).
+            </p>
+            <h4 id="conclusion3">Conclusão e Recomendações Práticas</h4>
+            <p>
+              A escolha da fórmula para TMB/GER deve considerar o somatotipo,
+              dados disponíveis e objetivos clínicos. Mifflin-St Jeor é versátil
+              para a maioria, enquanto Katch-McArdle é ideal para ectomorfos e
+              atletas com MLG conhecida. Evite Harris-Benedict em endomorfos,
+              usando correções ou alternativas. Fluxogramas decisórios podem
+              padronizar a seleção, minimizando erros e otimizando planejamentos
+              nutricionais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="info-blocks-container">
+      <div class="info-block">
+        <img src="imagens/Deficit de sono.png" alt="Déficit de sono" />
+        <div class="text-content">
+          <h3>
+            <a
+              href="https://hbr.org/2006/10/sleep-deficit-the-performance-killer?language=pt&fbclid=PAQ0xDSwJzSjpleHRuA2FlbQIxMQABpws2lMcpuhBpnGkVc1UDjyUC9pk2kxeOEW1rcliZ38tk8vfpndI9e-2tIqSt_aem_-rneIbFqX50CVs0B6Twksw"
+            >
+              Déficit de sono: o assassino do desempenho
+            </a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <img
+          src="imagens/Hidratacao.png"
+          alt="Hidratação durante o exercício"
+        />
+        <div class="text-content">
+          <h3>
+            <a href="https://www.scielo.br/j/rbme/a/7QD5xyBKdjsGf7KRqqkKGCK/">
+              Hidratação durante o exercício: a sede é suficiente?
+            </a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <img src="imagens/Calistenia.png" alt="Benefícios da calistenia" />
+        <div class="text-content">
+          <h3>
+            <a
+              href="https://www.nsctotal.com.br/noticias/veja-os-beneficios-da-calistenia-para-a-saude"
+            >
+              Veja os benefícios da calistenia para a saúde
+            </a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
