@@ -3,23 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="formulario.css" />
-    <title>Triagem - OpalEats</title>
-    <link rel="manifest" href="LogoMarca/site.webmanifest" />
-    <link rel="icon" href="LogoMarca/favicon.ico" type="image/x-icon" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="LogoMarca/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="LogoMarca/favicon-16x16.png"
-    />
-    <link rel="apple-touch-icon" href="LogoMarca/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <title>Triagem - Ony</title>
   </head>
 
   <body>
@@ -28,7 +13,7 @@
     </header>
 
     <main>
-      <form id="form-triagem" action="formula/planejamento.html" method="get">
+      <form id="form-triagem" action="../pages/planejamento.html" method="get">
         <!-- 1º Informações Pessoais -->
         <fieldset>
           <legend>Informações Pessoais</legend>
@@ -196,7 +181,7 @@
           <div class="biotipo-container">
             <label class="biotipo-option" data-biotipo="ectomorfo">
               <img
-                src="imagens/ectomorfo.png"
+                src="../images/ectomorfo.png"
                 alt="Ectomorfo"
                 width="150"
                 height="200"
@@ -206,7 +191,7 @@
             </label>
             <label class="biotipo-option" data-biotipo="endomorfo">
               <img
-                src="imagens/endomorfo.png"
+                src="../images/endomorfo.png"
                 alt="Endomorfo"
                 width="150"
                 height="200"
@@ -216,7 +201,7 @@
             </label>
             <label class="biotipo-option" data-biotipo="mesomorfo">
               <img
-                src="imagens/mesomorfo.png"
+                src="../images/mesomorfo.png"
                 alt="Mesomorfo"
                 width="150"
                 height="200"
@@ -395,9 +380,10 @@
       </form>
     </main>
 
-    <script src="modals.js"></script>
-    <script src="biotipo.js"></script>
-    <script src="validacao.js"></script>
+    <script src="../javascript/modals.js"></script>
+    <script src="../javascript/biotipo.js"></script>
+    <script src="../javascript/validacao.js"></script>
+
     <script>
       // Validação do campo de altura
       const alturaInput = document.getElementById("altura");

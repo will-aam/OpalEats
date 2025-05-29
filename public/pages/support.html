@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Ony Suporte - Em Manutenção</title>
+    <style>
+      :root {
+        --ony-primary-color: #2e8b57; /* Verde mar médio (SeaGreen) */
+        --ony-primary-hover: #257247;
+        --ony-accent-color: #5cb85c; /* Verde mais suave */
+        --ony-text-color: #333;
+        --ony-light-text-color: #555;
+        --ony-background-color: #f8f9fa;
+        --ony-container-bg: #ffffff;
+        --ony-light-gray: #e9ecef;
+        --ony-border-color: #dee2e6;
+        --ony-font-family: "Nunito", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--ony-font-family);
+        background-color: var(--ony-background-color);
+        color: var(--ony-text-color);
+        line-height: 1.7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        overflow-x: hidden; /* Prevenir scroll horizontal por animações */
+      }
+
+      .maintenance-container {
+        background-color: var(--ony-container-bg);
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 650px;
+        text-align: center;
+        animation: fadeInContainer 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeInContainer {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Removido .icon-area e .gear-icon e @keyframes spinGear */
+
+      h1 {
+        font-size: 2.5em; /* 40px */
+        color: var(--ony-primary-color);
+        margin-top: 20px; /* Adicionado um pouco de margem superior para compensar a ausência do ícone */
+        margin-bottom: 15px;
+        font-weight: 700;
+        animation: slideInText 0.6s ease-out 0.2s forwards;
+        opacity: 0;
+      }
+
+      .subtitle {
+        font-size: 1.25em; /* 20px */
+        color: var(--ony-light-text-color);
+        margin-bottom: 25px;
+        animation: slideInText 0.6s ease-out 0.4s forwards;
+        opacity: 0;
+      }
+
+      .message {
+        font-size: 1em; /* 16px */
+        color: var(--ony-text-color);
+        margin-bottom: 30px;
+        animation: slideInText 0.6s ease-out 0.6s forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInText {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .progress-bar-container {
+        width: 90%;
+        max-width: 400px;
+        height: 12px; /* Mais fina */
+        background-color: var(--ony-light-gray);
+        border-radius: 6px;
+        margin: 30px auto 35px auto;
+        overflow: hidden;
+        animation: fadeInElement 0.6s ease-out 0.8s forwards;
+        opacity: 0;
+      }
+
+      .progress-bar {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--ony-accent-color),
+          var(--ony-primary-color)
+        );
+        border-radius: 6px;
+        animation: progressBarAnimation 3s ease-in-out infinite;
+      }
+
+      @keyframes progressBarAnimation {
+        0% {
+          width: 0%;
+          opacity: 1;
+        }
+        45% {
+          width: 85%;
+          opacity: 1;
+        }
+        55% {
+          width: 85%;
+          opacity: 1;
+        } /* Pausa */
+        100% {
+          width: 100%;
+          opacity: 0;
+        }
+      }
+
+      .contact-info {
+        margin-top: 30px;
+        font-size: 0.95em;
+        color: var(--ony-light-text-color);
+        padding: 20px;
+        background-color: var(--ony-background-color); /* Leve destaque */
+        border-radius: 8px;
+        border: 1px solid var(--ony-light-gray);
+        animation: fadeInElement 0.6s ease-out 1s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInElement {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .contact-info p {
+        margin-bottom: 8px;
+      }
+      .contact-info p:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-info a {
+        color: var(--ony-primary-hover);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        margin-top: 35px;
+        font-size: 0.85em;
+        color: #888;
+        animation: fadeInElement 0.6s ease-out 1.2s forwards;
+        opacity: 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .maintenance-container {
+          padding: 30px 20px;
+          margin: 20px;
+        }
+        h1 {
+          font-size: 2.2em;
+        }
+        .subtitle {
+          font-size: 1.1em;
+        }
+        /* Removido .gear-icon da media query */
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.9em;
+        }
+        .subtitle {
+          font-size: 1em;
+        }
+        .message {
+          font-size: 0.95em;
+        }
+        .contact-info {
+          font-size: 0.9em;
+          padding: 15px;
+        }
+        .progress-bar-container {
+          height: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maintenance-container">
+      <h1>Em Manutenção</h1>
+      <p class="subtitle">
+        Nossa página de suporte está recebendo alguns cuidados especiais!
+      </p>
+      <p class="message">
+        Estamos trabalhando duro nos bastidores para melhorar sua experiência e
+        trazer novidades incríveis. Agradecemos a sua paciência e compreensão.
+        Voltaremos ao ar em breve!
+      </p>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="contact-info">
+        <p>Enquanto isso, se precisar de ajuda urgente, você pode:</p>
+        <p>
+          Visitar nossa <a href="/index.html">Página Inicial</a> para outras
+          informações.
+        </p>
+        <p>
+          Ou nos enviar um e-mail para:
+          <a href="mailto:suporte@onyapp.com.br">suporte@onyapp.com.br</a>
+        </p>
+      </div>
+
+      <footer>
+        &copy; <span id="currentYear"></span> Ony - Seu Nutricionista Virtual.
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

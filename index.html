@@ -3,41 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpalEats</title>
-    <link rel="manifest" href="LogoMarca/site.webmanifest" />
-    <link rel="icon" href="LogoMarca/favicon.ico" type="image/x-icon" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="LogoMarca/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="LogoMarca/favicon-16x16.png"
-    />
-    <link rel="apple-touch-icon" href="LogoMarca/apple-touch-icon.png" />
-    <link rel="stylesheet" href="index.css" />
+    <title>Ony</title>
+    <link rel="stylesheet" href="public/styles/index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="suporte.html">Suporte</a></li>
-        <li><a href="apoie.html" class="apoie">Apoie</a></li>
+        <li><a href="public/pages/login.html">Login</a></li>
+        <li><a href="public/pages/blog.html">Blog</a></li>
+        <li><a href="public/pages/support.html">Suporte</a></li>
+        <li><a href="public/pages/donate.html" class="apoie">Apoie</a></li>
       </ul>
     </nav>
 
-    <header id="cabecalho">
+    <header>
       <hgroup>
-        <h1>Bem-vindo(a) à OpalEats!</h1>
+        <h1>Bem-vindo(a) à Ony!</h1>
         <h2>Vamos juntos em direção ao seu objetivo!</h2>
       </hgroup>
     </header>
-
+    <div id="header"></div>
     <main>
       <h2>Por onde começar?</h2>
       <p>
@@ -49,7 +35,7 @@
       </p>
 
       <a
-        href="formulario.html"
+        href="public/pages/form.html"
         class="botao"
         aria-label="Iniciar o cálculo do plano alimentar"
         >Começar agora</a
@@ -62,6 +48,5 @@
         Para orientações personalizadas, consulte um profissional.
       </p>
     </footer>
-    <script src="index.js"></script>
   </body>
 </html>

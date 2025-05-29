@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apoie o Ony</title>
+    <link rel="stylesheet" href="../styles/donate.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Apoie o Ony!</h1>
+        <p class="subtitle">
+          Nos ajude a manter este serviço gratuito no ar e em constante
+          evolução.
+        </p>
+      </header>
+
+      <section class="explanation-text">
+        <p>
+          O Ony é um projeto desenvolvido para te ajudar a alcançar seus
+          objetivos de saúde e bem-estar de forma acessível. Sua doação
+          voluntária é muito importante e nos ajuda a cobrir os custos com
+          servidores, desenvolvimento de novas funcionalidades e melhorias
+          contínuas na plataforma.
+        </p>
+        <p>
+          As doações são opcionais, mas cada contribuição faz uma grande
+          diferença!
+        </p>
+      </section>
+
+      <section class="donation-form">
+        <h2>Faça sua contribuição:</h2>
+
+        <div class="predefined-amounts">
+          <button class="amount-button" data-value="5">R$ 5</button>
+          <button class="amount-button" data-value="10">R$ 10</button>
+          <button class="amount-button" data-value="20">R$ 20</button>
+          <button class="amount-button" data-value="50">R$ 50</button>
+        </div>
+
+        <label for="customAmount" class="custom-amount-label"
+          >Ou digite outro valor (R$):</label
+        >
+        <input
+          type="number"
+          id="customAmount"
+          class="custom-amount-input"
+          placeholder="Ex: 15"
+          min="5"
+        />
+
+        <button id="donateBtn" class="donate-button">Fazer Doação</button>
+
+        <p id="errorMessage" class="error-message"></p>
+
+        <div id="feedbackArea">
+          <div class="spinner"></div>
+          <p id="feedbackMessage"></p>
+        </div>
+      </section>
+
+      <a href="/index.html" class="back-button">Voltar à Página Inicial</a>
+    </div>
+
+    <footer>
+      <p>&copy; <span id="currentYear"></span> Ony</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const amountButtons = document.querySelectorAll(".amount-button");
+        const customAmountInput = document.getElementById("customAmount");
+        const donateBtn = document.getElementById("donateBtn");
+        const errorMessage = document.getElementById("errorMessage");
+        const feedbackArea = document.getElementById("feedbackArea");
+        const feedbackMessage = document.getElementById("feedbackMessage");
+        const spinner = feedbackArea.querySelector(".spinner"); // Correção aqui
+
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+
+        let selectedAmount = 0;
+
+        function clearError() {
+          errorMessage.style.display = "none";
+          errorMessage.textContent = "";
+        }
+
+        function showError(message) {
+          errorMessage.textContent = message;
+          errorMessage.style.display = "block";
+          feedbackArea.style.display = "none"; // Esconde feedback se houver erro
+        }
+
+        function showFeedback(message) {
+          feedbackMessage.textContent = message;
+          spinner.style.display = "block";
+          feedbackArea.style.display = "block";
+          clearError(); // Esconde erros se o feedback for mostrado
+        }
+
+        function hideFeedback() {
+          feedbackArea.style.display = "none";
+          spinner.style.display = "none";
+          feedbackMessage.textContent = "";
+        }
+
+        amountButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            selectedAmount = parseFloat(this.dataset.value);
+            amountButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+            customAmountInput.value = ""; // Limpa o campo customizado
+            clearError();
+            hideFeedback();
+          });
+        });
+
+        customAmountInput.addEventListener("input", function () {
+          const value = parseFloat(this.value);
+          if (value > 0) {
+            selectedAmount = value;
+            amountButtons.forEach((btn) => btn.classList.remove("active"));
+          } else if (this.value === "") {
+            // Se o campo for limpo, reseta selectedAmount
+            selectedAmount = 0;
+          } else {
+            // Valor negativo ou zero não é válido para doação aqui
+            selectedAmount = 0;
+          }
+          clearError();
+          hideFeedback();
+        });
+
+        customAmountInput.addEventListener("focus", function () {
+          amountButtons.forEach((btn) => btn.classList.remove("active"));
+          selectedAmount =
+            parseFloat(this.value) > 0 ? parseFloat(this.value) : 0;
+          clearError();
+          hideFeedback();
+        });
+
+        donateBtn.addEventListener("click", function () {
+          // Atualiza selectedAmount caso o usuário tenha digitado no campo customizado e clicado direto em doar
+          if (
+            customAmountInput.value !== "" &&
+            parseFloat(customAmountInput.value) > 0
+          ) {
+            selectedAmount = parseFloat(customAmountInput.value);
+            amountButtons.forEach((btn) => btn.classList.remove("active")); // Garante que botões predefinidos não estejam ativos
+          } else if (
+            customAmountInput.value !== "" &&
+            parseFloat(customAmountInput.value) <= 0
+          ) {
+            // Se digitou valor inválido no custom e não selecionou predefinido
+            selectedAmount = 0;
+          }
+
+          if (selectedAmount <= 0) {
+            showError(
+              "Por favor, selecione ou digite um valor válido para doar."
+            );
+            return;
+          }
+
+          clearError();
+          showFeedback("Redirecionando para o pagamento...");
+
+          // ****** IMPORTANTE: Substitua pelo seu link real do Mercado Pago ******
+          // Este é um placeholder. O Mercado Pago pode ter diferentes formas de passar o valor.
+          // Verifique a documentação do Mercado Pago para a forma correta de construir o link de pagamento
+          // com um valor predefinido. Pode ser um parâmetro na URL como `&amount=` ou `?transaction_amount=`.
+          // Se o seu link de doação do MP já inclui um valor fixo e você quer que o usuário
+          // defina no seu site, você precisará de uma integração mais avançada (checkout API)
+          // ou de um link de pagamento que permita sobrescrever/definir o valor via URL.
+          const mercadoPagoBaseURL =
+            "https://link.mercadopago.com.br/SEU_LINK_AQUI"; // EXEMPLO!
+          // const mercadoPagoURL = `${mercadoPagoBaseURL}?amount=${selectedAmount}`; // Se o MP permitir passar amount assim
+          // Se o link já for para um "produto" com preço editável via API, ou se o link for genérico,
+          // a forma de passar o valor pode variar.
+          // Para este exemplo, vamos assumir que seu link base já está configurado ou
+          // que você passaria o valor para uma API sua que geraria o link do MP.
+          // Como a instrução é apenas redirecionar, vamos simular o redirecionamento
+          // com o valor para um link genérico.
+
+          let finalURL;
+          // Exemplo hipotético de como poderia ser se o MP aceitasse `transaction_amount`
+          // finalURL = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=SEU_PREFERENCE_ID&transaction_amount=${selectedAmount}`;
+
+          // Usando o placeholder que você fornecerá:
+          finalURL = `https://SUA_URL_MERCADOPAGO_AQUI.com/doacao?valor=${selectedAmount}`;
+          console.log(
+            `Redirecionando para: ${finalURL} com valor R$${selectedAmount}`
+          );
+
+          // Simulação de redirecionamento após um pequeno delay para o usuário ver o feedback
+          setTimeout(function () {
+            // Descomente a linha abaixo para redirecionar de verdade:
+            // window.location.href = finalURL;
+
+            // Para fins de demonstração, vamos apenas mostrar um alerta e resetar o feedback.
+            alert(
+              `Demonstração: Seria redirecionado para pagar R$${selectedAmount.toFixed(
+                2
+              )}.\nURL (exemplo): ${finalURL}`
+            );
+            hideFeedback();
+            // selectedAmount = 0; // Resetar valor
+            // amountButtons.forEach(btn => btn.classList.remove('active'));
+            // customAmountInput.value = '';
+          }, 2000); // Atraso de 2 segundos
+        });
+      });
+    </script>
+  </body>
+</html>
